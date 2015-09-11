@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <gamers>
 	<gamer>
 		<user> Spyder 1 </user>
 		<point> 10 </point>
-	</gamer>
+	<gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer><gamer><user>test</user><point>1000</point></gamer></gamer>
 	<gamer>
 		<user> Spyder 2 </user>
 		<point> 10 </point>
