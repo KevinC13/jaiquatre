@@ -109,7 +109,7 @@ function showSnoopRestant(){
 
 function gameOver(){
 	if($('#gameOver').length == 0){
-		var gameBoxOver = '<div id="gameOver"><p>Game Over Man </p><a href="javascript:location.reload()">Retry</a></div>';
+		var gameBoxOver = '<div id="gameOver"><p>Game Over Man </p><a href="javascript:location.reload()">Retry</a> <a href=javascript:saveScore()>Save Score</a></div>';
 		$(gameBoxOver).hide().appendTo('.container').fadeIn();
 	}
 }
@@ -161,17 +161,27 @@ function lireFileXml(){
             type: "GET",
             url: "data/data.php",
             data : { action : 'read'},
-            dataType: "xml",
+            dataType: 'JSON',
             success: function(xml) 
                      {
-                       $(xml).find('gamer').each(   
-                         function()
-                         {
-                            var user = $(this).find('user').text();
-                            var point = $(this).find('point').text();
+                       $.each( xml.gamer, function( key, value ) {
+						  var html = "<p>"+ value.user+" "+value.point+"</p>";
+						  $(html).appendTo("#SnoopBestScore");
+						});
+                     }
+        });
+}
 
-                            console.log(user+" "+point);
-                         });
+function saveScore(){
+	$.ajax( {
+            type: "GET",
+            url: "data/data.php",
+            data : { action : 'write',
+        			point : '1000'},
+            dataType: 'JSON',
+            success: function(xml)
+                     {
+                     	console.log(xml);
                      }
         });
 }
