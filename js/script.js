@@ -20,7 +20,7 @@ $(document).ready(function(){
 	levelFunction();
 	trigerClick();
 	showSnoopRestant();
-	lireFileXml();
+	lireFileXml();	
 	$(".snoop").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd ',   
     function(e) {
     	checkImg();
@@ -161,11 +161,12 @@ function lireFileXml(){
             type: "GET",
             url: "data/data.php",
             data : { action : 'read'},
-            dataType: 'JSON',
             success: function(xml) 
-                     {
-                       $.each( xml.gamer, function( key, value ) {
-						  var html = "<p>"+ value.user+" "+value.point+"</p>";
+                     {						
+                       $.each( xml, function( key, value ) {
+						 value = JSON.parse(value);
+						 console.log(value);
+						  var html = "<p>"+ value[0]+" "+value[1]+"</p>";
 						  $(html).appendTo("#SnoopBestScore");
 						});
                      }
@@ -177,11 +178,12 @@ function saveScore(){
             type: "GET",
             url: "data/data.php",
             data : { action : 'write',
-        			point : '1000'},
-            dataType: 'JSON',
+        			name : 'Jimmy',
+        			point : '100000'},
             success: function(xml)
                      {
                      	console.log(xml);
+                     	// location.reload();
                      }
         });
 }
