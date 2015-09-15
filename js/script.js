@@ -157,33 +157,31 @@ function algoPoints(tailleSnoop){
 }
 
 function lireFileXml(){
-	 $.ajax( {
-            type: "GET",
-            url: "data/data.php",
-            data : { action : 'read'},
-            success: function(xml) 
-                     {						
-                       $.each( xml, function( key, value ) {
-						 value = JSON.parse(value);
-						 console.log(value);
-						  var html = "<p>"+ value[0]+" "+value[1]+"</p>";
-						  $(html).appendTo("#SnoopBestScore");
-						});
-                     }
-        });
+	$.ajax( {
+    	type: "GET",
+        url: "data/data.php",
+        data : { action : 'read'},
+        success: function(xml) {
+        	var scores = JSON.parse(xml);
+        	for (var i = 0; i < scores.scores.length; i++){
+        		var html = "<p><span class='nom'>"+ scores.scores[i].name+"</span> <span class='points'>"+scores.scores[i].points+"</span></p>";
+				$(html).appendTo("#SnoopBestScore");
+        	}
+		}
+    });
 }
 
 function saveScore(){
 	$.ajax( {
-            type: "GET",
-            url: "data/data.php",
-            data : { action : 'write',
-        			name : 'Jimmy',
-        			point : '100000'},
-            success: function(xml)
-                     {
-                     	console.log(xml);
-                     	// location.reload();
-                     }
-        });
+        type: "GET",
+        url: "data/data.php",
+        data : { 
+        	action : 'write',
+    		name : 'Jimmy',
+    		point : '100000'
+    	},
+        success: function(xml) {
+        	
+    	}
+	});
 }
