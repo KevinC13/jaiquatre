@@ -34,9 +34,13 @@ body{
 	top: -500px;
 	left: -500px;
 	width:500px;
+	height: 500px;
 	z-index: 10;
 	cursor: url('../img/gun.png'), pointer;
 	animation: rotating 4s linear infinite;
+	background-image: url('../img/Snoop-Dogg-1.png');
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 #SnoopBar {

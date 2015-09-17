@@ -29,7 +29,7 @@ $(document).ready(function(){
 
 
 function trigerClick(){
-	$("body").on("click",".snoop",function(){
+	$("body").on("mousedown",".snoop",function(){
 		$(this).remove();
 		SnoopClick ++ ;
 		showSnoopRestant()
@@ -37,6 +37,10 @@ function trigerClick(){
 		checkImg();
 	});
 
+	// Desactivate right click event
+	$(document).on("contextmenu", function(e) {
+        e.preventDefault();
+    });
 }
 
 function playSound(){
@@ -65,7 +69,8 @@ function imageFunc(elem){
 	var rotation = getRandomInt(1,3);
 	var top = sizeTop + sizeSnoopImgWidth ;
 	var left = sizeLeft + sizeSnoopImgWidth;
-	elem.css({'width': getRandomInt(300,501)+'px'});
+	var size = getRandomInt(300,501);
+	elem.css({'width': size+'px','height': size+'px',});
 	elem.css({'animation-duration': getRandomInt(1,5)+'s'});
 	if(rotation == 1){
 		elem.css({'animation-name':'rotatingReverse'});
@@ -90,7 +95,7 @@ function levelFunction(){
 
 function checkImg(testEnd){
 	testEnd = typeof testEnd !== 'undefined' ? testEnd : 0;
-	if($('body img').length <= 0){
+	if($('body .snoop').length <= 0){
 		nextLevel();
 		level ++;
 		levelFunction();
@@ -124,7 +129,7 @@ function createSnoopImg(variable){
 
 			}
 			setTimeout(function(){
-				var elemCreated = $("<img class='snoop' style='top:"+x+"px;left:"+y+"px' src='img/Snoop-Dogg-1.png' />").appendTo('body');
+				var elemCreated = $("<div class='snoop' style='top:"+x+"px;left:"+y+"px'> </div>").appendTo('body');
 				imageFunc(elemCreated);
 				createSnoopImg(SnoopImgStatus);
 			}, 200);
