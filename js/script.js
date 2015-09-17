@@ -18,7 +18,7 @@ var compteur = 3;
 $(document).ready(function(){
 	compteurFunc();
 	levelFunction();
-	trigerClick();
+	triger();
 	showSnoopRestant();
 	lireFileXml();	
 	$(".snoop").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd ',   
@@ -28,7 +28,7 @@ $(document).ready(function(){
 })
 
 
-function trigerClick(){
+function triger(){
 	$("body").on("mousedown",".snoop",function(){
 		$(this).remove();
 		SnoopClick ++ ;
@@ -41,6 +41,11 @@ function trigerClick(){
 	$(document).on("contextmenu", function(e) {
         e.preventDefault();
     });
+
+    $(window).resize(function (){
+		sizeTop = $(document).innerHeight();
+		sizeLeft = $(document).innerWidth();
+    })
 }
 
 function playSound(){
