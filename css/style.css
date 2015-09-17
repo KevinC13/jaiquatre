@@ -124,6 +124,18 @@ p{
 
 }
 
+#PseudoLine {display: block;}
+#PseudoLine p {display: inline-block;}
+
+#nameScore {
+
+	    height: 30px;
+    float: right;
+    margin-top: 20px;
+    width: 200px;
+
+}
+
 #gameOver a:hover{}
 
 .bottomPage{position: inherit;
