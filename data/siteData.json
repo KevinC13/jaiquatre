@@ -1,24 +1,24 @@
 {
     "scores": [
         {
+            "name": "Master",
+            "points": 1000
+        },
+        {
+            "name": "beau gosse tavu",
+            "points": 307
+        },
+        {
+            "name": "Master",
+            "points": 303
+        },
+        {
             "name": "kevin4",
             "points": 124
         },
         {
             "name": "kevin3",
             "points": 122
-        },
-        {
-            "name": "kevin3",
-            "points": 121
-        },
-        {
-            "name": "kevin4",
-            "points": 121
-        },
-        {
-            "name": "kevin3",
-            "points": 120
         }
     ]
 }

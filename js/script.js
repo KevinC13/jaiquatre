@@ -119,7 +119,7 @@ function showSnoopRestant(){
 
 function gameOver(){
 	if($('#gameOver').length == 0){
-		var gameBoxOver = '<div id="gameOver"><img src="img/GameOver_Img.png" alt="GameOverGros" width="150px" ><p>Gros, t\'en a trop pris ! </p><div id="ButtonsGO"><a href="javascript:location.reload()">Retry</a><a href=javascript:saveScore()>Save Score</a></div></div>';
+		var gameBoxOver = '<div id="gameOver"><img src="img/GameOver_Img.png" alt="GameOverGros" width="150px" ><p>Gros, t\'en a trop pris ! </p><div id="ButtonsGO"><a href="javascript:location.reload()">Retry</a><input id="nameScore" name="name"/><a href=javascript:saveScore()>Save Score</a></div></div>';
 		$(gameBoxOver).hide().appendTo('.container').fadeIn();
 	}
 }
@@ -187,11 +187,11 @@ function saveScore(){
         url: "data/data.php",
         data : { 
         	action : 'write',
-    		name : 'Jimmy',
-    		point : '100000'
+    		name : $('#nameScore').val(),
+    		points : point
     	},
         success: function(xml) {
-        	
+        	alert('score enregistré');
     	}
 	});
 }
