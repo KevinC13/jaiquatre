@@ -1,6 +1,10 @@
 {
     "scores": [
         {
+            "name": "test",
+            "points": 11606659
+        },
+        {
             "name": "Master",
             "points": 1000
         },
@@ -15,10 +19,6 @@
         {
             "name": "kevin4",
             "points": 124
-        },
-        {
-            "name": "kevin3",
-            "points": 122
         }
     ]
 }
