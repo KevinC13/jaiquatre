@@ -20,6 +20,7 @@ switch ($_GET['action']) {
 			"name" => $_GET['name'],
 			"points" => (int)$_GET['points']
 		));
+		var_dump($score);
 
 		$flag = false; // variable tampon
 		$i = $MAX_SCORES;
