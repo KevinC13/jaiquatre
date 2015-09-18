@@ -35,6 +35,7 @@ function triger(){
 		showSnoopRestant()
 		calculPoint($(this));
 		checkImg();
+		$(this).removeClass('needToBeClicked');
 	});
 
 	// Desactivate right click event
@@ -88,10 +89,14 @@ function imageFunc(elem){
 	}else{
 		top = 100;
 	}
-	elem.animate({
+	elem.velocity({
 					'top':top+'px',
 					'left': left+'px'
-				},getRandomInt(4000,7000),function(){checkImg(1);});
+				},{
+					duration: getRandomInt(4000,7000),
+					 begin: function(e){$(e).addClass('needToBeClicked')},
+					complete: function(e){checkImg(1);$(e).addClass('end')}
+				});
 }
 function levelFunction(){
 	$("#level").html(level);
@@ -105,11 +110,10 @@ function checkImg(testEnd){
 		level ++;
 		levelFunction();
 	}else{
-		if(testEnd == 1){
-			if($('body .snoop:animated').length <= 0){
+			if($('body .snoop.needToBeClicked.end').length > 0){
 				gameOver();
 			}
-		}
+		
 	}
 }
 
@@ -131,10 +135,11 @@ function createSnoopImg(variable){
 
 			}
 			setTimeout(function(){
-				var elemCreated = $("<div class='snoop' style='top:"+x+"px;left:"+y+"px'> </div>").appendTo('body');
+				var htmlCreated = "<div class='snoop' style='top:"+x+"px;left:"+y+"px'> </div>";
+				var elemCreated = $(htmlCreated).appendTo('body');
 				imageFunc(elemCreated);
 				createSnoopImg(SnoopImgStatus);
-			}, 200);
+			}, 400);
 		}else{checkImg();}
 }
 function nextLevel(){
