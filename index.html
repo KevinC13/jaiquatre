@@ -14,9 +14,10 @@
 		
 		<div id="SnoopBar">
 			<h1 id="levelDiv">Level <span id="level"></span></h1>
-			<h2>Snoop's left<br/><span id="snoopRestant"></span></h2>
+			<h2>Snoop's left<gitbr/><span id="snoopRestant"></span></h2>
 			<h2>Points<br/><span id="snoopPoint">0</span></h2>
 			<div id="SnoopBestScore"></div>
+			<div><a href="javascript:vid.volume = 0;">Couper le son</a></div>
 			<p class='bottomPage'>By Kevin C., Herv&eacute; LG, Jimmy B.</p>
 		</div>
 		<div id="gameOver">
@@ -34,7 +35,11 @@
 		</div>
 	</div>
 <audio id="soundSnoop" src="Zic/SmokeWeedEveryDay.wav" preload="auto"></audio>
-<audio src="Zic/FondSonore.mp3" autoplay loop></audio>
+<audio id='backgroundSong' src="Zic/FondSonore.mp3" autoplay loop></audio>
 </body>
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript">
+	var vid = document.getElementById("backgroundSong");
+		vid.volume = 0.2;
+</script>
 </html>

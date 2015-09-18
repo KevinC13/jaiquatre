@@ -59,7 +59,7 @@ p{
 	height: 500px;
 	z-index: 10;
 	cursor: url('../img/gun.png'), pointer;
-	animation: rotating 4s linear infinite;
+
 	background-image: url('../img/Snoop-Dogg-1.png');
 	background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -153,7 +153,8 @@ p{
 #PseudoLine p {display: inline-block;}
 
 #nameScore {
-
+    padding: 0px 10px;
+    box-sizing: border-box;
 	    height: 30px;
     float: right;
     margin-top: 20px;
