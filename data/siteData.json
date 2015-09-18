@@ -1,24 +1,24 @@
 {
     "scores": [
         {
+            "name": "test",
+            "points": 11606659
+        },
+        {
+            "name": "TG",
+            "points": 1221
+        },
+        {
             "name": "Master",
             "points": 1000
         },
         {
+            "name": "grosse bite",
+            "points": 644
+        },
+        {
             "name": "beau gosse tavu",
             "points": 307
-        },
-        {
-            "name": "Master",
-            "points": 303
-        },
-        {
-            "name": "kevin4",
-            "points": 124
-        },
-        {
-            "name": "kevin3",
-            "points": 122
         }
     ]
 }

@@ -16,6 +16,28 @@ body{
 	margin: 0;
 }
 
+h1{
+	font-family: 'Roboto';
+	font-weight: 300;
+	font-size: 36px;
+}
+
+h2 {
+
+	font-family: 'Roboto';
+	font-weight: 300;
+	font-size: 28px;
+
+}
+
+p{
+
+	font-family: 'Roboto';
+	font-weight: 300;
+	font-size: 22px;
+
+}
+
 .container{
 	background: rgba(255,0,0,1);
 	background: -moz-linear-gradient(left, rgba(255,0,0,1) 0%, rgba(255,0,0,0.96) 7%, rgba(255,255,0,0.77) 39%, rgba(255,255,0,0.64) 60%, rgba(0,153,0,0.42) 97%, rgba(0,153,0,0.4) 100%);
@@ -46,7 +68,8 @@ body{
 #SnoopBar {
 
 	background-color: rgba(0,0,0,0.8);
-	width: 250px;
+	padding-top: 20px;
+	width: 20%;
 	height: 100%;
 	position: fixed;
     left: 0;
@@ -56,6 +79,12 @@ body{
 	font-family: 'Roboto', 'Comic Sans MS';
 	font-weight: 300;
 	text-align: center;
+}
+
+#SnoopBestScore {
+
+	margin-top: 35px;
+
 }
 
 #levelDiv{
@@ -80,17 +109,14 @@ body{
 	width: 500px;
     background-color: rgba(255,255,255,0.7);
     position: absolute;
-    top: 300px;
+    top: 50%;
+    transform: translateY(-50%);
     left: 50%;
     margin-left: -150px;
     box-sizing: border-box;
-    padding: 30px;}
+    padding: 50px;}
 
- #gameOver p{ text-align: center;
-			    font-family: 'Roboto';
-			    font-weight: 300;
-			    font-size: 40px;
-			}
+ #gameOver h1 { text-align: center;}
 #gameOver a{ 
 	display: inline-block;
     text-align: center;
@@ -103,6 +129,15 @@ body{
    	font-family: 'Roboto';
 			    font-weight: 300;
 }
+
+#gameOver img {
+
+	position: absolute;
+	top: -75px;
+	left: 33%;
+
+}
+
 #ButtonsGO {
 	width: 100%;
 	float: left; 
@@ -111,6 +146,18 @@ body{
 #ButtonsGO a:last-child{
 
 	float: right;
+
+}
+
+#PseudoLine {display: block;}
+#PseudoLine p {display: inline-block;}
+
+#nameScore {
+
+	    height: 30px;
+    float: right;
+    margin-top: 20px;
+    width: 200px;
 
 }
 
