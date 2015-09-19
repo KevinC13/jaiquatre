@@ -23,7 +23,7 @@ h1{
 }
 
 h2 {
-
+	display: inline-block;
 	font-family: 'Roboto';
 	font-weight: 300;
 	font-size: 28px;
@@ -51,6 +51,22 @@ p{
 	height: 100%;
 }
 
+.path {
+
+	stroke-dasharray: 1000;
+  	stroke-dashoffset: 1000;
+  	animation: StrokeMove 500ms linear forward;
+}
+
+@keyframes StrokeMove {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 .snoop{
 	position: absolute;
 	top: -500px;
@@ -67,28 +83,59 @@ p{
 
 #SnoopBar {
 
-	background-color: rgba(0,0,0,0.8);
-	padding-top: 20px;
-	width: 20%;
-	height: 100%;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#389347+0,19843c+30,19843c+68,19843c+68,19843c+68,19843c+68,19843c+68,19843c+68,42a34e+100 */
+background: #389347; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #389347 0%, #19843c 30%, #19843c 68%, #19843c 68%, #19843c 68%, #19843c 68%, #19843c 68%, #19843c 68%, #42a34e 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#389347), color-stop(30%,#19843c), color-stop(68%,#19843c), color-stop(68%,#19843c), color-stop(68%,#19843c), color-stop(68%,#19843c), color-stop(68%,#19843c), color-stop(68%,#19843c), color-stop(100%,#42a34e)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(45deg,  #389347 0%,#19843c 30%,#19843c 68%,#19843c 68%,#19843c 68%,#19843c 68%,#19843c 68%,#19843c 68%,#42a34e 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg,  #389347 0%,#19843c 30%,#19843c 68%,#19843c 68%,#19843c 68%,#19843c 68%,#19843c 68%,#19843c 68%,#42a34e 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg,  #389347 0%,#19843c 30%,#19843c 68%,#19843c 68%,#19843c 68%,#19843c 68%,#19843c 68%,#19843c 68%,#42a34e 100%); /* IE10+ */
+background: linear-gradient(45deg,  #389347 0%,#19843c 30%,#19843c 68%,#19843c 68%,#19843c 68%,#19843c 68%,#19843c 68%,#19843c 68%,#42a34e 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#389347', endColorstr='#42a34e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    box-shadow: 2px 2px 20px #444;
+	width: 100%;
 	position: fixed;
     left: 0;
-    top: 0;
+    bottom: 0;
     z-index: 11;
     color: #fff;
 	font-family: 'Roboto', 'Comic Sans MS';
 	font-weight: 300;
+	border-top: 3px solid #ffffff;
+}
+
+.SnoopLeft {
 	text-align: center;
+	width: 20%
+}
+
+.Points {
+	text-align: left;
+	width: 35%
 }
 
 #SnoopBestScore {
 
 	margin-top: 35px;
+	    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    padding-left: 15px;
+    text-align: left;
 
 }
 
 #levelDiv{
 	margin: 0;
+	position: absolute;
+    top: -72px;
+    left: 48%;
+    background-color: #2CB559;
+    padding: 50px 16px;
+    border-radius: 150px;
+    border: 2px solid #ffffff;
 }
 
 .compteur{
@@ -164,11 +211,10 @@ p{
 
 #gameOver a:hover{}
 
-.bottomPage{position: inherit;
-		    bottom: 10px;
-		    box-sizing: border-box;
+.bottomPage{
+		float: right;
 		    padding: 10px 20px;
-		    width: inherit;}
+		}
 @-webkit-keyframes rotating {
     from{
         -webkit-transform: rotate(0deg);
