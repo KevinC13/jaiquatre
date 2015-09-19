@@ -10,6 +10,16 @@ var SnoopClick = 0;
 var SnoopImgStatus = 0;
 var sizeSnoopImgWidth = 500;
 var point = 0;
+var snoopDog = {
+	positionX 	: 0,
+	positionY 	: 0,
+	width 		: 0,
+	height 		: 0,
+	urlImg 		: '',
+	active		: false,
+	clicked		: false,
+	elemHtml 	: ''
+};
 
 
 var compteur = 3;
